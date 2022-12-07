@@ -7,20 +7,62 @@
 
 import SwiftUI
 
+struct Bird {
+
+  var greeting: String {
+    return "Chirp!"
+  }
+
+  func greet() {
+    print("Tweet!")
+  }
+}
+
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+  let tweets: [TweetModel] = [
+    TweetModel(
+      content: "Tweet 1",
+      username: "username",
+      date: Date(),
+      image: "crow",
+      isFavorite: true),
+    TweetModel(
+      content: "Tweet 2",
+      username: "username",
+      date: Date(),
+      image: "crow",
+      isFavorite: false),
+  ]
+
+  var body: some View {
+    VStack {
+
+      HStack {
+        Text("Birdy")
+          .font(.title)
+
+        Spacer()
+
+        Button(action: {}) {
+          Text("Login")
         }
-        .padding()
+      }
+
+      Spacer()
+
+      List(tweets) { tweet in
+        Tweet(tweet: tweet)
+      }
+      .listStyle(.plain)
+
     }
+    .padding()
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

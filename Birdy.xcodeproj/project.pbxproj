@@ -11,6 +11,7 @@
 		F5F04839293FA2EC00985324 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F04838293FA2EC00985324 /* ContentView.swift */; };
 		F5F0483B293FA2EE00985324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F0483A293FA2EE00985324 /* Assets.xcassets */; };
 		F5F0483E293FA2EE00985324 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F0483D293FA2EE00985324 /* Preview Assets.xcassets */; };
+		F5F04845293FB2DC00985324 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F04844293FB2DC00985324 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F5F04838293FA2EC00985324 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5F0483A293FA2EE00985324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5F0483D293FA2EE00985324 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5F04844293FB2DC00985324 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				F5F04838293FA2EC00985324 /* ContentView.swift */,
 				F5F0483A293FA2EE00985324 /* Assets.xcassets */,
 				F5F0483C293FA2EE00985324 /* Preview Content */,
+				F5F04844293FB2DC00985324 /* Tweet.swift */,
 			);
 			path = Birdy;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F04845293FB2DC00985324 /* Tweet.swift in Sources */,
 				F5F04839293FA2EC00985324 /* ContentView.swift in Sources */,
 				F5F04837293FA2EC00985324 /* BirdyApp.swift in Sources */,
 			);
