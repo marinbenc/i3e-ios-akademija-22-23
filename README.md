@@ -1,19 +1,21 @@
 # I3E iOS Akademija 2022./23.
 
-## Termin 1
+## Termin 2
 
 ### Teme:
 
-- Uvod u SwiftUI
-- Swift `struct`, metode, property
-- `View`,`Text`, `Button`, `Image`
-- Layout (`VStack`, `HStack`)
-- `List`
+- Swift funkcije višeg reda, literals, first-class functions
+- SwiftUI state, binding
+- Navigacija
 
 ### Zadaća / priprema za sljedeći termin
 
-https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
+#### Funkcije višeg reda
 
-https://developer.apple.com/videos/play/wwdc2020/10119/ (prvih 20 minuta)
+https://www.hackingwithswift.com/read/0/21/closures
+https://docs.swift.org/swift-book/LanguageGuide/Closures.html
 
- 
+#### State
+
+https://www.youtube.com/watch?v=ByMiv08z1t8
+https://developer.apple.com/documentation/swiftui/state
