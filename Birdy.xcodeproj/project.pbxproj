@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F59D378029447D39008C8797 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D377F29447D39008C8797 /* LoginView.swift */; };
 		F5F04837293FA2EC00985324 /* BirdyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F04836293FA2EC00985324 /* BirdyApp.swift */; };
 		F5F04839293FA2EC00985324 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F04838293FA2EC00985324 /* ContentView.swift */; };
 		F5F0483B293FA2EE00985324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F0483A293FA2EE00985324 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F59D377F29447D39008C8797 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F5F04833293FA2EC00985324 /* Birdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F04836293FA2EC00985324 /* BirdyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdyApp.swift; sourceTree = "<group>"; };
 		F5F04838293FA2EC00985324 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				F5F0483A293FA2EE00985324 /* Assets.xcassets */,
 				F5F0483C293FA2EE00985324 /* Preview Content */,
 				F5F04844293FB2DC00985324 /* Tweet.swift */,
+				F59D377F29447D39008C8797 /* LoginView.swift */,
 			);
 			path = Birdy;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				F5F04845293FB2DC00985324 /* Tweet.swift in Sources */,
 				F5F04839293FA2EC00985324 /* ContentView.swift in Sources */,
+				F59D378029447D39008C8797 /* LoginView.swift in Sources */,
 				F5F04837293FA2EC00985324 /* BirdyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
