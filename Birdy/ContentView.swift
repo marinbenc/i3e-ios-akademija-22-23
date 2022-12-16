@@ -9,22 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-  @State var tweets: [TweetModel] = [
-    TweetModel(
-      content: "Tweet 1",
-      username: "username",
-      date: Date(),
-      image: "crow",
-      isFavorite: true),
-    TweetModel(
-      content: "Tweet 2",
-      username: "username",
-      date: Date(),
-      image: "crow",
-      isFavorite: false),
-  ]
-
-  @State var username = ""
+  @EnvironmentObject var tweetData: TweetData
+  @EnvironmentObject var userData: UserData
 
   @State var content: String = ""
   @State var isLoginViewPresented = false
@@ -32,7 +18,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       HStack {
-        Text(username.isEmpty ? "Birdy" : username)
+        Text(userData.username.isEmpty ? "Birdy" : userData.username)
           .font(.title)
 
         Spacer()
@@ -44,7 +30,7 @@ struct ContentView: View {
 
       Spacer()
 
-      List($tweets) { tweet in
+      List($tweetData.tweets) { tweet in
         Tweet(tweet: tweet)
       }
       .listStyle(.plain)
@@ -54,12 +40,11 @@ struct ContentView: View {
         TextField("Content", text: $content)
 
         Button(action: {
-          tweets.append(TweetModel(
+          tweetData.tweets.append(TweetModel(
             content: content,
             username: "marinbenc",
             date: Date(),
-            image: "crow",
-            isFavorite: false))
+            image: "crow"))
           content = ""
         }) {
           Text("New Tweet")
@@ -70,7 +55,7 @@ struct ContentView: View {
     }
     .padding()
     .sheet(isPresented: $isLoginViewPresented) {
-      LoginView(content: $username,
+      LoginView(content: $userData.username,
                 isPresented: $isLoginViewPresented)
     }
 
@@ -80,5 +65,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .environmentObject(TweetData())
+      .environmentObject(UserData())
   }
 }
