@@ -24,6 +24,10 @@ struct BirdyApp: App {
           .tabItem {
             Label("Search", systemImage: "magnifyingglass.circle")
           }
+        ProfileView()
+          .tabItem {
+            Label("Profile", systemImage: "person.circle")
+          }
       }
       .environmentObject(tweetData)
       .environmentObject(userData)

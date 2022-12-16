@@ -14,8 +14,12 @@ struct SearchView: View {
   @State var query: String = ""
 
   var foundTweets: [TweetModel] {
-    return tweetData.tweets.filter { tweet in
-      return tweet.content.lowercased().contains(query.lowercased())
+    if query.isEmpty {
+      return tweetData.tweets
+    } else {
+      return tweetData.tweets.filter { tweet in
+        return tweet.content.lowercased().contains(query.lowercased())
+      }
     }
   }
 
@@ -25,6 +29,7 @@ struct SearchView: View {
         .textFieldStyle(.roundedBorder)
       List(foundTweets) { tweetModel in
         Tweet(tweet: Binding.constant(tweetModel))
+          .disabled(true)
       }
       .listStyle(.plain)
     }.padding()

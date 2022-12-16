@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileView: View {
 
-
   @EnvironmentObject var userData: UserData
   @EnvironmentObject var tweetData: TweetData
 
@@ -19,16 +18,33 @@ struct ProfileView: View {
     }
   }
 
+  var body: some View {
+    VStack {
+      HStack {
+        Image(userData.image)
+          .resizable()
+          .frame(width: 55, height: 55)
+          .clipShape(Circle())
+        Text(userData.username)
+          .font(.title)
+          .bold()
+        Spacer()
+      }
+      .padding()
 
-
-
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      List(tweets) { tweetModel in
+        Tweet(tweet: Binding.constant(tweetModel))
+          .disabled(true)
+      }
+      .listStyle(.plain)
     }
+  }
 }
 
 struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
+  static var previews: some View {
+    ProfileView()
+      .environmentObject(UserData())
+      .environmentObject(TweetData())
+  }
 }
