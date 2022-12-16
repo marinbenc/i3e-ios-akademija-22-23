@@ -1,19 +1,14 @@
 # I3E iOS Akademija 2022./23.
 
-## Termin 1
+## Termin 3
 
 ### Teme:
 
-- Uvod u SwiftUI
-- Swift `struct`, metode, property
-- `View`,`Text`, `Button`, `Image`
-- Layout (`VStack`, `HStack`)
-- `List`
+- Arhitektura aplikacije (Data layer / presentation layer)
+- Data modeli: `ObservableObject`, `@Published`
+- SwiftUI Environment
 
 ### Zadaća / priprema za sljedeći termin
 
-https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
-
-https://developer.apple.com/videos/play/wwdc2020/10119/ (prvih 20 minuta)
-
- 
+https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app
+https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
