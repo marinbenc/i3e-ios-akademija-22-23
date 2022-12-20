@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let IMAGE_URL = URL(string: "https://cdn.britannica.com/01/88401-050-26CBE648/American-crow.jpg")!
+
 @main
 struct BirdyApp: App {
 
@@ -31,6 +33,7 @@ struct BirdyApp: App {
       }
       .environmentObject(tweetData)
       .environmentObject(userData)
+      .task(tweetData.fetchTweets)
     }
   }
 }

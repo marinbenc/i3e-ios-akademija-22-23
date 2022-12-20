@@ -7,26 +7,54 @@
 
 import SwiftUI
 
-struct TweetModel: Identifiable {
+struct TweetModel: Identifiable, Codable {
   var id = UUID().uuidString
 
   let content: String
   let username: String
   let date: Date
-  let image: String
+  let imageURL: URL
 }
+
+func printURL(url: URL?) throws {
+  if url == nil {
+    throw URLError(.badURL)
+  }
+
+  print(url)
+}
+
+func test() {
+
+  do {
+    try printURL(url: IMAGE_URL)
+  } catch let error {
+    print(error)
+  }
+
+}
+
+
 
 struct Tweet: View {
 
   @Binding var tweet: TweetModel
   @EnvironmentObject var userData: UserData
 
+  @State var image: UIImage? = nil
+
   var body: some View {
     HStack {
-      Image(tweet.image)
-        .resizable()
-        .frame(width: 55, height: 55)
-        .clipShape(Circle())
+      if let image {
+        Image(uiImage: image)
+          .resizable()
+          .frame(width: 55, height: 55)
+          .clipShape(Circle())
+      } else {
+        Circle()
+          .frame(width: 55, height: 55)
+          .foregroundColor(.gray)
+      }
 
       VStack(alignment: .leading) {
         Text(tweet.username)
@@ -52,6 +80,14 @@ struct Tweet: View {
         }
       }
     }
+    .task {
+      do {
+        let (data, _) = try await URLSession.shared.data(from: IMAGE_URL)
+        image = UIImage(data: data)
+      } catch let error {
+        print(error)
+      }
+    }
   }
 }
 
@@ -61,7 +97,7 @@ struct Tweet_Previews: PreviewProvider {
         content: "Tweet 1",
         username: "username",
         date: Date(),
-        image: "crow")))
+        imageURL: IMAGE_URL)))
       .environmentObject(UserData())
     }
 }
